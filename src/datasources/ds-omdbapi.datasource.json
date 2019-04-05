@@ -1,0 +1,21 @@
+{
+  "name": "dsOmdbapi",
+  "connector": "rest",
+  "baseURL": "http://www.omdbapi.com/",
+  "options": {
+    "headers": {
+      "content-type": "application/json"
+    }
+  },
+  "operations": [
+    {
+      "template": {
+        "method": "GET",
+        "url": "http://www.omdbapi.com/?apikey={apiKey}&t={title}"
+      },
+      "functions": {
+        "getDetails": ["apiKey", "title"]
+      }
+    }
+  ]
+}
